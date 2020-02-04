@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HACG Helper</title>
+<!-- <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script> -->
+<script>
+    function amake()
+    {
+        s=document.getElementById('webtext').value;
+        ru=/[0-9a-z]{40}/.exec(s);
+        if (ru)
+        {
+            ru='magnet:?xt=urn:btih:'+ru;
+            document.getElementById('out').innerHTML=ru;
+        }
+        else
+        {
+            alert("你输入的是smjb");
+        }
+    }
+    function tip()
+    {
+        document.getElementById('webtext').value="在这输入，臭弟弟";
+    }
+    function help()
+    {
+        document.getElementById('webtext').value=""
+    }
+</script>
+</head>
+<body>
+    内容:<input type="text" id="webtext" onblur="tip()" onfocus="help()">
+    <button onclick="amake()">确定</button>
+    <br>
+    <p id='out'></p>
+</body>
+</html>
