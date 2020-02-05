@@ -45,8 +45,17 @@
         document.getElementById("tip").innerHTML="md就是这";
     }
 </script>
+<style>
+    h3{
+        text-align: center;
+    }
+    body{
+        text-align: center;
+    }
+</style>
 </head>
 <body>
+    <h3><a href="https://hacg.me" target="_blank">琉璃神社</a></h3><br>
     内容:<input type="text" id="webtext" onblur="tip()" onfocus="help()" placeholder="在这输入">
     <button id="btn" onclick="amake()" onmouseover="cf()" onmouseout="cff()">确定</button>
     <p id="tip" onmouseover="cf1()" onmouseout="cf1f()"></p>
