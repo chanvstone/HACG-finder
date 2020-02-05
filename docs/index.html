@@ -22,7 +22,8 @@
     }
     function tip()
     {
-        document.getElementById('webtext').value="在这输入，臭弟弟";
+        if(document.gelElementByID("webtext").value!="")
+            document.getElementById('webtext').value="在这输入，臭弟弟";
     }
     function help()
     {
