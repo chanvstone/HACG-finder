@@ -19,6 +19,12 @@
                 }
                 document.getElementById("out").innerHTML = resault;
             }
+            else{
+                alert("瞎JB乱输？");
+            }
+        }
+        function clearinput() {
+            cao=document.getElementById("webtext").value="";
         }
     </script>
     <style>
@@ -36,6 +42,7 @@
     <h3><a href="https://hacg.me" target="_blank">琉璃神社</a></h3><br>
     内容:<input type="text" id="webtext">
     <button id="btn" onclick="amake()">确定</button>
+    <button id="cl" onclick="clearinput()">清空</button>
     <br>
     <p id='out'></p>
 </body>
