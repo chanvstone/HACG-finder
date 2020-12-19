@@ -1,35 +1,36 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="utf-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>HACG Helper</title>
-    <script>
-        function amake() {
-            var s = document.getElementById('webtext').value;
-            var pttr = /[0-9a-zA-Z]{40}/g;
-            var magnethead = "magnet:?xt=urn:btih:";
-            if (pttr.test(s)) {
-                var ru = s.match(/[0-9a-zA-Z]{40}/g);
-                document.getElementById("out").innerHTML = ru[0];
-                var resault = "";
-                for (t = 0; t < ru.length; t++) {
-                    resault += magnethead + ru[t] + "</br>";
-                }
-                document.getElementById("out").innerHTML = resault;
-            }
-            else{
-                alert("瞎JB乱输？");
-            }
-        }
-        function clearinput() {
-            cao=document.getElementById("webtext").value="";
-        }
-    </script>
+    <script src="script.js"></script>
     <style>
-        h3 {
-            text-align: center;
+        #source {
+            width: 50%;
+            height: 50px;
+            margin-top: 5px;
+            margin-left: 30px;
+        }
+
+        #submit {
+            width: 24%;
+            height: 30px;
+            margin-left: 30px;
+            margin-right: 2%;
+        }
+
+        #clear {
+            width: 24%;
+            height: 30px;
+            margin: 5px;
+        }
+
+        #out>input {
+            width: 50%;
+            margin-top: 10px;
+            margin-left: 30px;
         }
 
         body {
@@ -40,11 +41,13 @@
 
 <body>
     <h3><a href="https://hacg.me" target="_blank">琉璃神社</a></h3><br>
-    内容:<input type="text" id="webtext">
-    <button id="btn" onclick="amake()">确定</button>
-    <button id="cl" onclick="clearinput()">清空</button>
-    <br>
-    <p id='out'></p>
+    <div>
+        <!-- <input type="text" name="source" id="source"> -->
+        <textarea name="source" id="source" cols="40" rows="3"></textarea>
+        <br><input id="submit" type="button" value="Confirm"
+            onclick="strToMagnet()"><input id="clear" type="button" value="Clear" onclick="textClear()">
+    </div>
+    <div id="out"></div>
 </body>
 
 </html>
