@@ -14,24 +14,14 @@ var app=Vue.createApp({
             this.links=[];
         },
         make(){
-            // let code=/[0-9a-zA-Z]{32,64}/.exec(this.content);
-            // for(let i=0;i<code.length;++i){
-            //     this.links.push(this.magnet+code[i]);
-            // }
-            $.ajax({
-                url:this.content,
-                method:"GET",
-                dataType:"jsonp",
-                success:function(data,textStatus,jqXHR){
-                    console.log(data);
-                }
-            });
+            let code=/[0-9a-zA-Z]{32,64}/.exec(this.content);
+            for(let i=0;i<code.length;++i){
+                this.links.push(this.magnet+code[i]);
+            }
         },
-        copy(){
-
-        },
-        gdata(...args){
-            console.log([this,args]);
+        copy(click){
+            click.target.select();
+            document.execCommand("copy");
         }
     }
 });
